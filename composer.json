@@ -1,0 +1,22 @@
+{
+  "name": "debuss-a/spartoo",
+  "description": "A wrapper for the Spartoo API.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexandre DEBUSSCHÈRE",
+      "email": "zizilex@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-curl": "*",
+    "ext-dom": "*",
+    "ext-simplexml": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Spartoo\\": "src/"
+    }
+  }
+}
