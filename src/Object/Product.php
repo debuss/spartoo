@@ -236,7 +236,15 @@ class Product implements XMLTransformerInterface
      */
     public function setProductStyle(int $product_style): Product
     {
-        if (!in_array($product_style, Provisionning::getInstance()->getProductStyles())) {
+        static $categories;
+        if (!is_array($categories) || !count($categories)) {
+            $categories = array_column(
+                Provisionning::getInstance()->getCategories(),
+                'code'
+            );
+        }
+
+        if (!in_array($product_style, $categories)) {
             throw InvalidArgumentException::notSupportedProductStyle($product_style);
         }
 
